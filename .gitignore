@@ -1,0 +1,3 @@
+node_modules
+src/www/dist
+config/default.json

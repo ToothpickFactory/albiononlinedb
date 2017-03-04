@@ -1,0 +1,34 @@
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<form class="form-inline" ng-submit="vm.getWeapons(vm.query)">
+			<div class="form-group">
+				<select
+					class="form-control"
+					ng-model="vm.query.shopcategory"
+					ng-options="option.name as option.key for option in vm.shopcategorys track by option.key">
+					<option value="" disabled>Category</option>
+				</select>
+			</div>
+
+			<div class="form-group">
+				<select
+					class="form-control"
+					ng-model="vm.query.tier"
+					ng-options="option.name as option.key for option in vm.tiers track by option.key">
+					<option value="" disabled>Tier</option>
+				</select>
+			</div>
+			<button type="submit" class="btn btn-success">Search</button>
+		</form>
+	</div>
+	<div class="panel-body">
+		<div class="list-group">
+			<input type="text" class="form-control margin-verticle" ng-model="vm.filter" placeholder="filter"/>
+			<a ui-sref="weapons.weapon({id: weapon._id})"
+				class="list-group-item"
+				ng-repeat="weapon in vm.weapons | filter:{uniquename: vm.filter}"
+				ng-bind="::weapon.uniquename">
+			</a>
+		</div>
+	</div>
+</div>
