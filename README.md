@@ -1,8 +1,7 @@
 # albiononlinedb
 
 To get started:
-* git clone
-* https://github.com/ToothpickFactory/albiononlinedb.git
+* git clone https://github.com/ToothpickFactory/albiononlinedb.git
 * cd ./albiononlinedb
 * npm i
 
