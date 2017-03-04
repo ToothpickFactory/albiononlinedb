@@ -14,7 +14,6 @@ const embedTemplates	= require('gulp-angular-embed-templates');
 const babel						= require("gulp-babel");
 const plumber					= require("gulp-plumber");
 const sourcemaps			= require('gulp-sourcemaps');
-const rev							= require('gulp-rev');
 const runSequence			= require('run-sequence');
 const NODE_ENV				= process.env.NODE_ENV || "default";
 

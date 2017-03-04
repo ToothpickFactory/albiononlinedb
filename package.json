@@ -4,13 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon src/index.js --ignore src/public"
+    "start": "nodemon src/index.js --ignore src/public",
+    "postinstall": "cd ./src/www && gulp && cd ../../"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "babel-preset-es2015": "^6.9.0",
-    "bootstrap": "^3.3.7",
     "config": "^1.25.1",
     "cors": "^2.8.1",
     "express": "^4.15.0",
@@ -18,7 +18,6 @@
     "gulp-angular-embed-templates": "^2.3.0",
     "gulp-autoprefixer": "^3.1.1",
     "gulp-babel": "^6.1.2",
-    "gulp-cache-bust": "^1.1.0",
     "gulp-clean-css": "^2.3.2",
     "gulp-concat": "^2.2.0",
     "gulp-inject": "^4.1.0",
@@ -26,7 +25,6 @@
     "gulp-ng-config": "^1.4.0",
     "gulp-plumber": "^1.1.0",
     "gulp-rename": "^1.2.2",
-    "gulp-rev": "^7.1.2",
     "gulp-sass": "^2.0.4",
     "gulp-sass-glob": "^1.0.6",
     "gulp-sourcemaps": "^2.4.0",
