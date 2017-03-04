@@ -1,6 +1,7 @@
 # albiononlinedb
 
 To get started:
+* Have node.js installed on your machine https://nodejs.org/en/
 * git clone https://github.com/ToothpickFactory/albiononlinedb.git
 * cd ./albiononlinedb
 * npm i
