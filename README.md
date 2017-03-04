@@ -6,6 +6,8 @@ To get started:
 * cd ./albiononlinedb
 * npm i
 
+create a default.json file in ./config. Use example.json. You can set the baseUrl to be http://albiononlinedb.com to use the production API's. If working on just the front end don't worry about the other config fields.
+
 To start just the frontend:
 * cd src/www
 * gulp && gulp serve
