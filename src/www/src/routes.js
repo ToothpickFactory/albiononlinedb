@@ -6,14 +6,14 @@ angular.module('albion-server').config(['$stateProvider', '$urlRouterProvider', 
       url: '/home',
       template: '<home-page></home-page>'
     })
-		// Weapons Page
-    .state('weapons', {
-      url: '/weapons',
-      template: '<weapons-page></weapons-page>'
+		// Items Page
+    .state('items', {
+      url: '/items',
+      template: '<items-page></items-page>'
     })
-		.state('weapons.weapon', {
-      url: '/:id',
-      template: '<weapon-view></weapon-view>'
+		.state('items.item', {
+      url: '/:category/:id',
+      template: '<item-view></item-view>'
     })
   $urlRouterProvider.otherwise('/home');
 

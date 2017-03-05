@@ -1,7 +1,7 @@
 <nav class="navbar navbar-inverse navbar-fixed-top">
 	<div class="container">
 		<div class="navbar-header">
-			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+			<button type="button" class="navbar-toggle collapsed" ng-click="isCollapsed = !isCollapsed" ng-init="isCollapsed = true" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
 				<span class="sr-only">Toggle navigation</span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
@@ -9,10 +9,10 @@
 			</button>
 			<a class="navbar-brand" href="#">Albion Online DB</a>
 		</div>
-		<div id="navbar" class="collapse navbar-collapse">
+		<div id="navbar" uib-collapse="isCollapsed" class="collapse navbar-collapse">
 			<ul class="nav navbar-nav">
 				<li><a ui-sref="home">Home</a></li>
-				<li><a ui-sref="weapons">Weapons</a></li>
+				<li><a ui-sref="items">Items</a></li>
 			</ul>
 		</div>
 	</div>

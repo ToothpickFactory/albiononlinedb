@@ -1,8 +1,8 @@
-angular.module('albion-server').directive('weaponsPage', () => {
+angular.module('albion-server').directive('itemsPage', () => {
   return {
     restrict: 'E',
     scope: {},
-    templateUrl: 'weapons-page.html',
+    templateUrl: 'items-page.html',
     bindToController: true,
     controllerAs: 'vm',
     controller: [function() {}]
