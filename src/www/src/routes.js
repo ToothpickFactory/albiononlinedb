@@ -15,6 +15,15 @@ angular.module('albion-server').config(['$stateProvider', '$urlRouterProvider', 
       url: '/:category/:id',
       template: '<item-view></item-view>'
     })
+    // Maps Page
+    .state('maps', {
+      url: '/maps',
+      template: '<maps-page></maps-page>'
+    })
+		.state('maps.map', {
+      url: '/:id',
+      template: '<map-view></map-view>'
+    })
   $urlRouterProvider.otherwise('/home');
 
 }]);

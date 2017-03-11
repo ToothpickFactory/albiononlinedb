@@ -1,0 +1,18 @@
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<form class="form-inline" ng-submit="vm.searchMaps(vm.query)">
+			<button type="submit" class="btn btn-success">Search</button>
+		</form>
+	</div>
+
+	<div class="panel-body">
+		<div class="list-group">
+			<input type="text" class="form-control margin-verticle" ng-model="vm.filter" placeholder="filter"/>
+			<a ui-sref="maps.map({id: map._id})"
+				class="list-group-item"
+				ng-repeat="map in vm.maps | filter:{displayname: vm.filter} | orderBy: 'displayname'"
+				ng-bind="::map.displayname">
+			</a>
+		</div>
+	</div>
+</div>
