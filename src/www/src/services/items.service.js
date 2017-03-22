@@ -1,31 +1,14 @@
 angular.module('albion-server').factory('itemsService', ['$http', 'baseUrl', ($http, baseUrl) => {
-		let _item;
-		let _itemId;
-		let _fetching;
-
-		let getItem = (category, itemId) => {
-			if(itemId === _itemId) return Promise.resolve(_item);
-			if(_fetching) return _fetching;
-
-			_itemId = itemId;
-			_fetching = $http.get(`${baseUrl}/api/items/${category}/${itemId}`)
-				.then(res => {
-					_fetching = null;
-					return _item = res.data;
-				});
-			return _fetching;
+		let get = (itemId) => {
+			return $http.get(`${baseUrl}/api/items/${itemId}`)
+				.then(res => res.data);
 		}
 
-		let searchItems = (category, query) => {
-			if(_fetching) return _fetching;
-			_fetching = $http.get(`${baseUrl}/api/items/${category}/`, {params: query})
-				.then(res => {
-					_fetching = null;
-					return res.data;
-				});
-			return _fetching;
+		let search = (query) => {
+			return $http.get(`${baseUrl}/api/items`, {params: query})
+				.then(res => res.data);
 		}
 
 
-  return { getItem, searchItems }
+  return { get, search }
 }]);

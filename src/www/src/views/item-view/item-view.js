@@ -5,12 +5,12 @@ angular.module('albion-server').directive('itemView', () => {
     templateUrl: 'item-view.html',
     bindToController: true,
     controllerAs: 'vm',
-    controller: ['itemsService', '$stateParams', 'baseUrl', function(itemsService, $stateParams, baseUrl) {
-      this.category = $stateParams.category;
-      this.itemId = $stateParams.id;
-      this.baseUrl = baseUrl;
+    controller: ['itemsService', '$stateParams', 'baseUrl', 'imgUrl', function(itemsService, $stateParams, baseUrl, imgUrl) {
+      this.uniquename = $stateParams.uniquename;
+      this.baseUrl  = baseUrl;
+      this.imgUrl   = imgUrl;
 
-				itemsService.getItem(this.category, this.itemId)
+				itemsService.get(this.uniquename)
 					.then(item => this.item = item);
   	}]
 	}

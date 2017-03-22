@@ -1,2 +1,10 @@
-<pre>{{vm.baseUrl +'/api/maps/'+ vm.mapId}}</pre>
-<pre>{{vm.map | json:4}}</pre>
+<uib-tabset active="active">
+  <uib-tab index="0" heading="Pretty View">
+    <canvas id="map-canvas"></canvas>
+  </uib-tab>
+  <uib-tab index="1" heading="Raw Data">
+    <pre>{{vm.baseUrl +'/api/maps/'+ vm.mapId}}</pre>
+    <pre>{{vm.gcsUrl + '/' + vm.map.uniquename + '.png'}}</pre>
+    <pre>{{vm.map | json:4}}</pre>
+  </uib-tab>
+</uib-tabset>

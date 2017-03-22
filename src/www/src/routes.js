@@ -12,7 +12,7 @@ angular.module('albion-server').config(['$stateProvider', '$urlRouterProvider', 
       template: '<items-page></items-page>'
     })
 		.state('items.item', {
-      url: '/:category/:id',
+      url: '/:uniquename',
       template: '<item-view></item-view>'
     })
     // Maps Page

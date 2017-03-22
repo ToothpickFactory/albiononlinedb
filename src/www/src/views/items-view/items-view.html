@@ -1,21 +1,13 @@
 <div class="panel panel-default">
 	<div class="panel-heading">
-		<form class="form-inline" ng-submit="vm.searchItems(category, vm.query)">
-			<div class="form-group">
-				<select
-					class="form-control"
-					ng-model="category"
-					ng-options="option as option.name for option in vm.categories track by option.key">
-					<option value="" disabled>Category</option>
-				</select>
-			</div>
+		<form class="form-inline" ng-submit="vm.searchItems(vm.query)">
 
 			<div class="form-group">
 				<select
 					class="form-control"
 					ng-model="vm.query.shopcategory"
-					ng-options="option.key as option.name for option in category.shopcategories track by option.key">
-					<option value="" disabled>Subcategory</option>
+					ng-options="option.key as option.name for option in vm.shopcategories track by option.key">
+					<option value="" disabled>Shop Category</option>
 				</select>
 			</div>
 
@@ -27,18 +19,20 @@
 					<option value="" disabled>Tier</option>
 				</select>
 			</div>
-			<button type="submit" class="btn btn-success" ng-disabled="!category">Search</button>
+			<button type="submit" class="btn btn-success">Search</button>
 		</form>
 	</div>
 
-	<div class="panel-body">
+	<div class="panel-body" ng-show="vm.items && vm.items.length">
 		<div class="list-group">
 			<input type="text" class="form-control margin-verticle" ng-model="vm.filter" placeholder="filter"/>
-			<a ui-sref="items.item({category: category.key, id: item._id})"
-				class="list-group-item"
-				ng-repeat="item in vm.items | filter:{uniquename: vm.filter}"
-				ng-bind="::item.uniquename">
-			</a>
+			<select
+				class="form-control"
+				ng-model="uniquename"
+				ng-change="vm.$state.go('items.item', {uniquename: uniquename})"
+				ng-options="item.uniquename as item.uniquename for item in vm.items | filter:{uniquename: vm.filter}">
+				<option value="" disabled>Select Item</option>
+			</select>
 		</div>
 	</div>
 </div>

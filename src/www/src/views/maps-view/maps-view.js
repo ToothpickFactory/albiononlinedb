@@ -5,14 +5,12 @@ angular.module('albion-server').directive('mapsView', () => {
     templateUrl: 'maps-view.html',
     bindToController: true,
     controllerAs: 'vm',
-    controller: ['mapsService', function(mapsService) {
-			this.query = {};
+    controller: ['worldService', '$state', '$stateParams', function(worldService, $state, $stateParams) {
+      this.$state = $state;
+      this.mapId = $stateParams.id;
 
-			this.searchMaps = (query) => {
-				mapsService.searchMaps(query)
-					.then(maps => this.maps = maps);
-			};
-
+      worldService.search({})
+				.then(world => this.world = world);
   	}]
 	}
 });

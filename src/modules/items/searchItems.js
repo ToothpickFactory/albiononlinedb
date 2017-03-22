@@ -1,8 +1,8 @@
 const mongo = require("../../connections/mongo");
 
-function searchItems(collection, query = {}){
+function searchItems(query = {}){
 	return mongo.getConnection().then(db => {
-		return db.collection(collection).find(query, {"_id": 1, "uniquename": 1}).toArray()
+		return db.collection("items").find(query, {"uniquename": 1}).toArray()
 	})
 }
 

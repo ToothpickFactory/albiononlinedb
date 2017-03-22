@@ -9,9 +9,9 @@ module.exports = (app) => {
 			.catch(err => res.status(400).send(err));
 	});
 
-	app.get('/api/maps/:id', (req, res) => {
-		let id = req.params.id;
-		MapsModule.getMap(id)
+	app.get('/api/maps/:uid', (req, res) => {
+		let uid = req.params.uid;
+		MapsModule.getMap(uid)
 			.then(map => res.send(map))
 			.catch(err => res.status(400).send(err));
 	});

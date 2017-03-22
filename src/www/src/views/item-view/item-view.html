@@ -1,2 +1,10 @@
-<pre>{{vm.baseUrl +'/api/items/' + vm.category + '/' + vm.itemId}}</pre>
-<pre>{{vm.item | json:4}}</pre>
+<uib-tabset active="active">
+  <uib-tab index="0" heading="Pretty View">
+    <img ng-src="{{vm.imgUrl + '/' + vm.uniquename}}"/>
+  </uib-tab>
+  <uib-tab index="1" heading="Raw Data">
+    <pre>{{vm.baseUrl +'/api/items/' + vm.uniquename}}</pre>
+    <pre>{{vm.imgUrl + '/' + vm.uniquename}}</pre>
+    <pre>{{vm.item | json:4}}</pre>
+  </uib-tab>
+</uib-tabset>
